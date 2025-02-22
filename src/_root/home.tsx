@@ -28,9 +28,9 @@ const posts = [
 const Home = () => {
     return (
         <div className="w-screen h-screen">
-            <div className="absolute w-screen h-screen overflow-auto border flex justify-center">
+            <div className="absolute w-screen h-screen overflow-auto flex justify-center">
                 <div className="">
-                    <h1 className="text-5xl mb-[30px]">Home Feed</h1>
+                    <h1 className="text-5xl font-bold mb-[30px]">Home Feed</h1>
                     {
                         posts.map((post, key) => (
                             <div key={key} className="mb-[50px]">

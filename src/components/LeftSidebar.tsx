@@ -4,7 +4,7 @@ import NavigationMenuBar from "./NavigationMenuBar.tsx";
 const LeftSidebar = ({width} : {width: number}) => {
 
     return (
-        <aside className="h-full absolute overflow-auto px-[20px] scroll-smooth bg-[#09090A]" style={{width: width}}>
+        <aside className="h-full absolute z-1 overflow-auto px-[20px] scroll-smooth bg-[#09090A]" style={{width: width}}>
             <div className="flex flex-col justify-between gap-[30px]">
                 <div className="logo">
                     <img src="/assets/icons/instaclone_logo.svg" alt=""/>
