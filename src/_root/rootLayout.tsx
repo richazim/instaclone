@@ -1,4 +1,3 @@
-import React from 'react';
 import {Outlet} from "react-router";
 import LeftSidebar from "../components/LeftSidebar.tsx";
 
