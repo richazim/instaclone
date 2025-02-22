@@ -4,10 +4,10 @@ import LeftSidebar from "../components/LeftSidebar.tsx";
 
 const RootLayout = () => {
     return (
-        <div className="h-screen w-screen bg-[#000] text-white fixed">
+        <div className="h-screen w-screen bg-[#000] text-white relative">
             <LeftSidebar width={300}/> 
 
-            <section className="absolute left-[300px] h-screen w-[calc(100vw-300px)] overflow-auto">
+            <section className="absolute h-screen w-screen overflow-auto">
                 <Outlet/>
             </section>
         </div>
