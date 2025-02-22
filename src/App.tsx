@@ -10,6 +10,7 @@ import SignUp from './_auth/forms/sign-up'
  import People from "./_root/pages/people.tsx";
  import Logout from "./_root/pages/logout.tsx";
  import Profile from "./_root/pages/Profile.tsx";
+ import Saved from "./_root/pages/saved.tsx";
 
 function App() { 
 
@@ -25,7 +26,7 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="/explore" element={<Explore/>}/>
               <Route path="/people" element={<People/>}/>
-              <Route path="/saved" element={<Explore/>}/>
+              <Route path="/saved" element={<Saved/>}/>
               <Route path="/create-post" element={<CreatePost/>}/>
               <Route path="/logout" element={<Logout/>}/>
               <Route path="/profile" element={<Profile/>}/>
