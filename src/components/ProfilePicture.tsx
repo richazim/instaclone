@@ -15,7 +15,7 @@ const ProfilePicture = ({name, username, flex} : {name: string, username: string
             {
                 flex && (
                     <div className="flex justify-center items-center w-full mt-[10px] mb-[10px]">
-                        <button className="py-[7px] px-[20px] rounded-[10px] bg-orange-70  ">
+                        <button className="py-[7px] px-[20px] rounded-[10px] bg-blue-950 border shadow-2xl">
                             Follow
                         </button>
                     </div>
