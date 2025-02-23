@@ -8,7 +8,23 @@ const posts = [
         city: "Fès",
         title: 'Titre 1',
         tags: "#paris #az",
-        imageLink: "/assets/images/profile.png"
+        imageLink: "https://picsum.photos/800/800"
+    },
+    {
+        name: "Azim",
+        profileLink: "/assets/images/profile.png",
+        city: "Fès",
+        title: 'Titre 1',
+        tags: "#paris #az",
+        imageLink: "https://picsum.photos/800/800"
+    },
+    {
+        name: "Azim",
+        profileLink: "/assets/images/profile.png",
+        city: "Fès",
+        title: 'Titre 1',
+        tags: "#paris #az",
+        imageLink: "https://picsum.photos/800/800"
     },
     {
         name: "Azim",
@@ -27,7 +43,6 @@ const posts = [
         imageLink: "https://picsum.photos/800/800"
     }
 ]
-
 
 const Explore = () => {
     return (
