@@ -5,21 +5,21 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
 const formSchema = z.object({
-    username: z.string().min(2).max(50),
+    title: z.string().min(2).max(50),
+    location: z.string().min(2).max(50),
+    tags: z.string().min(2).max(50),
 })
 
-import { Button } from "@/components/ui/button"
+import { Button } from "../../components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+} from "../../components/ui/form"
+import { Input } from "../../components/ui/input"
 import {useRef} from "react";
 
 
@@ -28,7 +28,7 @@ const CreatePost = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            username: "",
+            title: "",
         },
     })
 

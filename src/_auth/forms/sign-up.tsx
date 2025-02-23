@@ -12,7 +12,6 @@ import { Button } from "../../components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -51,7 +50,7 @@ const SignUp = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                   control={form.control}
-                  name="name"
+                  name="username"
                   render={({ field }) => (
                       <FormItem>
                         <FormLabel>Name</FormLabel>
@@ -79,7 +78,7 @@ const SignUp = () => {
 
               <FormField
                   control={form.control}
-                  name="email"
+                  name="username"
                   render={({ field }) => (
                       <FormItem>
                         <FormLabel>Email</FormLabel>
@@ -93,7 +92,7 @@ const SignUp = () => {
 
               <FormField
                   control={form.control}
-                  name="password"
+                  name="username"
                   render={({ field }) => (
                       <FormItem>
                         <FormLabel>Password</FormLabel>

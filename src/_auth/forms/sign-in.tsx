@@ -8,17 +8,16 @@ const formSchema = z.object({
   username: z.string().min(2).max(50),
 })
 
-import { Button } from "@/components/ui/button"
+import { Button } from "../../components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+} from "../../components/ui/form"
+import { Input } from "../../components/ui/input"
 
 
 
@@ -51,7 +50,7 @@ const SignIn = () => {
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     <FormField
                         control={form.control}
-                        name="name"
+                        name="username"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Name</FormLabel>
@@ -79,7 +78,7 @@ const SignIn = () => {
 
                     <FormField
                         control={form.control}
-                        name="email"
+                        name="username"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Email</FormLabel>
@@ -93,7 +92,7 @@ const SignIn = () => {
 
                     <FormField
                         control={form.control}
-                        name="password"
+                        name="username"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Password</FormLabel>

@@ -1,13 +1,10 @@
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
-    CardTitle,
 } from "./ui/card.tsx"
 import {Link} from "react-router";
-import React from "react";
 
 const PostCard = ({
     name,
@@ -15,7 +12,7 @@ const PostCard = ({
     title,
     tags,
     imageLink
-                  }) => {
+                  } : {name: string, city: string, title: string, tags: string, imageLink: string}) => {
 
     return (
         <Card className="w-[500px]">
