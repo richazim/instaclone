@@ -1,5 +1,6 @@
 import ProfilePicture from "./ProfilePicture.tsx";
 import NavigationMenuBar from "./NavigationMenuBar.tsx";
+import {Link} from "react-router";
 
 const LeftSidebar = ({width} : {width: number}) => {
 
@@ -10,7 +11,9 @@ const LeftSidebar = ({width} : {width: number}) => {
                     <img src="/assets/icons/instaclone_logo.svg" alt=""/>
                 </div>
 
-                <ProfilePicture name="Azim" username="username"/>
+                <Link to="/profile">
+                    <ProfilePicture name="Azim" username="username"/>
+                </Link>
 
                 <NavigationMenuBar/>
             </div>

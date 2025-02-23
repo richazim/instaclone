@@ -1,9 +1,11 @@
 
 const Profile = () => {
     return (
-        <div className="pl-[350px] pr-[50px]">
-            <div className="border ">
-                Profile
+        <div className="w-screen h-screen">
+            <div className="absolute pl-[350px] pr-[30px] border h-screen  w-screen overflow-auto">
+                <div className="">
+                    Profile
+                </div>
             </div>
         </div>
     );

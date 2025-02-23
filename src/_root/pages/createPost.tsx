@@ -34,7 +34,7 @@ const CreatePost = () => {
         // ✅ This will be type-safe and validated.
         console.log(values)
     }
-    
+
     return (
         <div className="w-screen h-screen">
             <div className="absolute pl-[350px] pr-[30px] border h-screen  w-screen overflow-auto">
