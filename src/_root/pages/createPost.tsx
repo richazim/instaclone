@@ -19,9 +19,12 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import {useRef} from "react";
 
 
 const CreatePost = () => {
+    const inputFileRef = useRef<HTMLInputElement | null>(null);
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -33,6 +36,12 @@ const CreatePost = () => {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         console.log(values)
+    }
+
+    const chooseFile = () => {
+        if(inputFileRef.current){
+            inputFileRef.current.click();
+        }
     }
 
     return (
@@ -48,10 +57,10 @@ const CreatePost = () => {
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                             <FormField
                                 control={form.control}
-                                name="name"
+                                name="title"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Name</FormLabel>
+                                        <FormLabel>Title</FormLabel>
                                         <FormControl>
                                             <Input placeholder="" {...field} />
                                         </FormControl>
@@ -60,14 +69,32 @@ const CreatePost = () => {
                                 )}
                             />
 
+
+                            <div className="flex flex-col">
+                                <label>Add Photos</label>
+                                <div className="">
+                                    <input type="file" ref={inputFileRef} className="hidden" id="avatar" name="avatar" accept="image/png, image/jpeg"/>
+                                    <div className="design border h-[400px] rounded-[15px] flex justify-center items-center" onClick={chooseFile}>
+                                        <div className="flex flex-col items-center justify-center">
+                                            <img src="/assets/icons/file-upload.svg" alt="" width={100} height={100}/>
+                                            <div className="flex flex-col text-center mt-[20px]">
+                                                <span className="">Drag photo here</span>
+                                                <span className="text-[#333]">SVG, PNG, JPG</span>
+                                            </div>
+                                            <span className="bg-blue-950 px-[20px] py-[15px] mt-[20px] rounded-[10px] cursor-pointer">Select from computer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <FormField
                                 control={form.control}
-                                name="username"
+                                name="location"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Username</FormLabel>
+                                        <FormLabel>Location</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="" {...field} />
+                                            <Input placeholder="Fès" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -76,35 +103,25 @@ const CreatePost = () => {
 
                             <FormField
                                 control={form.control}
-                                name="email"
+                                name="tags"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Email</FormLabel>
+                                        <FormLabel>Tags</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="exemple@gmail.com" {...field} />
+                                            <Input placeholder="Flooz, Morroco, Dhiram" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
 
-                            <FormField
-                                control={form.control}
-                                name="password"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Password</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="my password" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <Button type="submit" className="p-[20px]">Se connecter</Button>
+                            <div className="relative">
+                                <div className="flex flex-row gap-[20px] absolute right-0">
+                                    <Button className="p-[20px] bg-[#333]">Cancel</Button>
+                                    <Button type="submit" className="p-[20px]">Create Post</Button>
+                                </div>
+                            </div>
                         </form>
-
-                        <p>Vous ne disposez pas de compte ? <a href="/sign-up" className="text-blue-500">S'inscrire</a></p>
                     </Form>
                 </div>
             </div>
